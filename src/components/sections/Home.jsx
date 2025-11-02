@@ -13,7 +13,7 @@ export const Home = () => {
                     </h1>
 
                     <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-                        I’m a motivated software developer with a focus on web development, data analytics,
+                        A motivated software developer with a focus on web development, data analytics,
                         and backend systems. Skilled in problem-solving and delivering data-driven solutions,
                         with a passion for AI, robotics, and advanced programming concepts. Dedicated to continuous
                         learning and applying innovative approaches to software development.
