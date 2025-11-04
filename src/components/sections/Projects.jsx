@@ -1,4 +1,5 @@
 import { RevealOnScroll } from "../RevealOnScroll";
+import { Link } from "react-router-dom";
 
 export const Projects = () => {
     return (
@@ -31,12 +32,12 @@ export const Projects = () => {
                             </div>
 
                             <div className="flex justify-between items-center">
-                                <a
-                                    href="#"
+                                <Link
+                                    to="/projects/ai-resume-screener"
                                     className="text-purple-400 hover:text-purple-300 transition-colors my-4"
                                 >
                                     View Project →
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div
@@ -68,12 +69,12 @@ export const Projects = () => {
                                 ))}
                             </div>
                             <div className="flex justify-between items-center">
-                                <a
-                                    href="#"
+                                <Link
+                                    to="/projects/ecommerce-redesign"
                                     className="text-purple-400 hover:text-purple-300 transition-colors my-4"
                                 >
                                     View Project →
-                                </a>
+                                </Link>
                             </div>
                         </div>
 
@@ -108,12 +109,12 @@ export const Projects = () => {
                                 )}
                             </div>
                             <div className="flex justify-between items-center">
-                                <a
-                                    href="#"
+                                <Link
+                                    to="/projects/arduino-math-tool"
                                     className="text-purple-400 hover:text-purple-300 transition-colors my-4"
                                 >
                                     View Project →
-                                </a>
+                                </Link>
                             </div>
                         </div>
 
@@ -146,12 +147,12 @@ export const Projects = () => {
                                 ))}
                             </div>
                             <div className="flex justify-between items-center ">
-                                <a
-                                    href="#"
+                                <Link
+                                    to="/projects/power-bi-dashboard"
                                     className="text-purple-400 hover:text-purple-300 transition-colors my-4"
                                 >
                                     View Project →
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

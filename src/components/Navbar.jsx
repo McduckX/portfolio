@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
     useEffect(() => {
@@ -13,9 +14,9 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
         <nav className="fixed top-0 w-full z-40 bg-[rgba(10, 10, 10, 0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
             <div className="max-w-5xl mx-auto px-4">
                 <div className="flex justify-between items-center h-16">
-                    <a href="#home" className="font-mono text-xl font-bold text-white">
+                    <Link to="/#home" className="font-mono text-xl font-bold text-white">
                         Stefan's <span className="text-purple-600">Portfolio</span>
-                    </a>
+                    </Link>
 
                     <button
                         type="button"
@@ -29,10 +30,10 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
                     </button>
 
                     <div className="hidden md:flex items-center space-x-8">
-                        <a href="#home" className="text-gray-300 hover:text-white transition-colors">Home</a>
-                        <a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a>
-                        <a href="#projects" className="text-gray-300 hover:text-white transition-colors">Projects</a>
-                        <a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a>
+                        <Link to="/#home" className="text-gray-300 hover:text-white transition-colors">Home</Link>
+                        <Link to="/#about" className="text-gray-300 hover:text-white transition-colors">About</Link>
+                        <Link to="/#projects" className="text-gray-300 hover:text-white transition-colors">Projects</Link>
+                        <Link to="/#contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link>
                     </div>
                 </div>
             </div>

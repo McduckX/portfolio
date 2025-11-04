@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     return (
@@ -21,8 +22,8 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                 &times;
             </button>
 
-            <a
-                href="#home"
+            <Link
+                to="/#home"
                 onClick={() => setMenuOpen(false)}
                 className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
                     ${
@@ -33,9 +34,9 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             `}
             >
                 Home
-            </a>
-            <a
-                href="#about"
+            </Link>
+            <Link
+                to="/#about"
                 onClick={() => setMenuOpen(false)}
                 className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
@@ -44,9 +45,9 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     `}
             >
                 About
-            </a>
-            <a
-                href="#projects"
+            </Link>
+            <Link
+                to="/#projects"
                 onClick={() => setMenuOpen(false)}
                 className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
@@ -55,9 +56,9 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     `}
             >
                 Projects
-            </a>
-            <a
-                href="#contact"
+            </Link>
+            <Link
+                to="/#contact"
                 onClick={() => setMenuOpen(false)}
                 className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
@@ -66,7 +67,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     `}
             >
                 Contact
-            </a>
+            </Link>
         </div>
     );
 };

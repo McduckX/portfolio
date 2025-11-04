@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";
 import { MobileMenu } from "./components/MobileMenu";
@@ -8,10 +9,29 @@ import { About } from "./components/sections/About";
 import { Projects } from "./components/sections/Projects";
 import "./index.css";
 import { Contact } from "./components/sections/Contact";
+import { ProjectDetail } from "./components/ProjectDetail";
 
 function App() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        if (!isLoaded) return;
+        const hash = location.hash;
+        const id = hash ? hash.substring(1) : "";
+        if (id) {
+            // Defer to ensure target sections are mounted
+            setTimeout(() => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            }, 0);
+        } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    }, [location.pathname, location.hash, isLoaded]);
 
     return (
         <>
@@ -23,10 +43,20 @@ function App() {
             >
                 <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
                 <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-                <Home />
-                <About />
-                <Projects />
-                <Contact />
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <>
+                                <Home />
+                                <About />
+                                <Projects />
+                                <Contact />
+                            </>
+                        }
+                    />
+                    <Route path="/projects/:id" element={<ProjectDetail />} />
+                </Routes>
             </div>
         </>
     );
