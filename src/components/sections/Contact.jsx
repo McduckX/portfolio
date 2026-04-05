@@ -33,10 +33,37 @@ export const Contact = () => {
         >
             <RevealOnScroll>
                 <div className="px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
-                    <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent text-center">
+                    <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent text-center">
                         {" "}
                         Get In Touch
                     </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                        <a
+                            href="mailto:stefan@example.com"
+                            className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center transition hover:border-purple-600/30"
+                        >
+                            <p className="text-sm uppercase tracking-[0.28em] text-purple-400 mb-2">Email</p>
+                            <p className="text-white font-medium">stefan@example.com</p>
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center transition hover:border-purple-600/30"
+                        >
+                            <p className="text-sm uppercase tracking-[0.28em] text-purple-400 mb-2">LinkedIn</p>
+                            <p className="text-white font-medium">linkedin.com/in/stefan</p>
+                        </a>
+                        <a
+                            href="https://github.com/McduckX"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center transition hover:border-purple-600/30"
+                        >
+                            <p className="text-sm uppercase tracking-[0.28em] text-purple-400 mb-2">GitHub</p>
+                            <p className="text-white font-medium">github.com/McduckX</p>
+                        </a>
+                    </div>
                     <form className="space-y-6" onSubmit={handleSubmit}>
                         <div className="relative">
                             <input

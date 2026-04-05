@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
-
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     return (
         <div
@@ -22,8 +19,8 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                 &times;
             </button>
 
-            <Link
-                to="/#home"
+            <a
+                href="#home"
                 onClick={() => setMenuOpen(false)}
                 className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
                     ${
@@ -34,9 +31,9 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             `}
             >
                 Home
-            </Link>
-            <Link
-                to="/#about"
+            </a>
+            <a
+                href="#about"
                 onClick={() => setMenuOpen(false)}
                 className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
@@ -45,9 +42,9 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     `}
             >
                 About
-            </Link>
-            <Link
-                to="/#projects"
+            </a>
+            <a
+                href="#projects"
                 onClick={() => setMenuOpen(false)}
                 className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
@@ -56,9 +53,9 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     `}
             >
                 Projects
-            </Link>
-            <Link
-                to="/#contact"
+            </a>
+            <a
+                href="#contact"
                 onClick={() => setMenuOpen(false)}
                 className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
@@ -67,7 +64,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     `}
             >
                 Contact
-            </Link>
+            </a>
         </div>
     );
 };

@@ -1,9 +1,9 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
-    const tools = ["React", "Node.js", "TailwindCSS", "Git", "Power BI", "Tableau", "AWS", "GA4", "Puter.js", "OpenAI API"];
+    const tools = ["Godot", "Aseprite", "Blender", "Visual Studio", "Git", "Figma", "Photoshop", "Tiled", "VS Code"];
 
-    const languages = ["Java", "Python", "C", "SQL", "JavaScript", "TypeScript", "HTML/CSS"];
+    const languages = ["C#", "GDScript", "Python", "C++", "JavaScript", "HLSL", "GLSL"];
 
     return (
         <section
@@ -19,8 +19,9 @@ export const About = () => {
 
                     <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
                         <p className="text-gray-300 mb-6">
-                            I build practical, scalable software — from AI-powered tools to data dashboards —
-                            and love turning ideas into clean, efficient code.
+                            I build game systems and interactive prototypes that are polished, performance-conscious,
+                            and ready for player testing. My work blends engineering discipline with creative gameplay
+                            iteration to deliver clear, responsive player experiences.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -46,7 +47,7 @@ export const About = () => {
                                         <span
                                             key={key}
                                             className="bg-purple-600/10 text-purple-500 py-1 px-3 rounded-full text-sm hover:bg-purple-600/20
-                                    hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition
+                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition
                     "
                                         >
                       {tech}
@@ -65,8 +66,8 @@ export const About = () => {
                                     <strong> B.Eng. in Software Engineering </strong> – York University (Expected Apr 2028)
                                 </li>
                                 <li>
-                                    Relevant Coursework & Skills: Data Structures, Algorithms, Web Development,
-                                    Data Analytics, Embedded Systems, Cloud & API Integration
+                                    Relevant Coursework & Skills: Data Structures, Algorithms, Game Programming,
+                                    Real-Time Systems, AI, Graphics, and Engineering for Interactive Media
                                 </li>
                             </ul>
                         </div>
