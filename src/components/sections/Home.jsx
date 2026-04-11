@@ -1,42 +1,92 @@
 import { RevealOnScroll } from "../RevealOnScroll";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
-    return (
-        <section
-            id="home"
-            className="min-h-screen flex items-center justify-center relative"
-        >
-            <RevealOnScroll>
-                <div className="text-center z-10 px-4">
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent leading-right">
-                        Hi, I'm Stefan Milinovic
-                    </h1>
+  return (
+    <section id="home" className="min-h-screen py-20 relative overflow-hidden">
+      <RevealOnScroll>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent leading-tight">
+              Hi, I'm Stefan Milinovic
+            </h1>
+            <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+              I build practical, scalable software that connects data, design,
+              and human impact. This portfolio highlights my learning,
+              reflections, and career-focused artifacts for a strong COOP 2100
+              presentation.
+            </p>
+          </div>
 
-                    <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-                        A motivated software developer with a focus on web development, data analytics,
-                        and backend systems. Skilled in problem-solving and delivering data-driven solutions,
-                        with a passion for AI, robotics, and advanced programming concepts. Dedicated to continuous
-                        learning and applying innovative approaches to software development.
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div className="rounded-3xl bg-slate-950 border border-white/10 p-8 shadow-xl shadow-black/20">
+              <h2 className="text-3xl font-semibold text-white mb-6">
+                Table of Contents
+              </h2>
+              <ul className="space-y-4 text-slate-300">
+                <li>
+                  <Link
+                    to="/discover-myself"
+                    className="text-purple-300 hover:text-purple-200 underline"
+                  >
+                    Discover Myself
+                  </Link>{" "}
+                  – self-assessment, values, learning philosophy, and reflective
+                  career purpose.
+                </li>
+                <li>
+                  <Link
+                    to="/career"
+                    className="text-purple-300 hover:text-purple-200 underline"
+                  >
+                    Career & Experience
+                  </Link>{" "}
+                  – education, work history, and goals.
+                </li>
+                <li>
+                  <a
+                    href="#projects"
+                    className="text-purple-300 hover:text-purple-200 underline"
+                  >
+                    Artifacts
+                  </a>{" "}
+                  – project work that demonstrates my learning integration.
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    className="text-purple-300 hover:text-purple-200 underline"
+                  >
+                    Contact
+                  </a>{" "}
+                  – how to reach me and request supporting documents.
+                </li>
+              </ul>
+            </div>
 
-                    </p>
-                    <div className="flex justify-center space-x-4">
-                        <a
-                            href="#projects"
-                            className="bg-purple-700 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59, 130, 246, 0.4)]"
-                        >
-                            View Projects
-                        </a>
-
-                        <a
-                            href="#contact"
-                            className="border border-purple-600/50 text-purple-600 py-3 px-6 rounded font-medium transition-all duration-200
-             hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59, 130, 246, 0.2)] hover:bg-purple-600/10"
-                        >
-                            Contact Me
-                        </a>
-                    </div>
-                </div>
-            </RevealOnScroll>
-        </section>
-    );
+            <div className="rounded-3xl bg-slate-950 border border-white/10 p-8 shadow-xl shadow-black/20">
+              <h2 className="text-3xl font-semibold text-white mb-6">
+                At a Glance
+              </h2>
+              <div className="space-y-4 text-slate-300">
+                <p>
+                  <strong>Program:</strong> B.Eng. in Software Engineering, York
+                  University (Expected April 2028).
+                </p>
+                <p>
+                  <strong>Current focus:</strong> building accessible,
+                  data-driven, and experience-rich software for public-facing
+                  projects and digital learning.
+                </p>
+                <p>
+                  <strong>Portfolio goal:</strong> align artifacts with career
+                  development, self-reflection, and practical growth.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </RevealOnScroll>
+    </section>
+  );
 };

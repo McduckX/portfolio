@@ -12,8 +12,13 @@ export const ProjectDetail = () => {
           <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
             Project not found
           </h1>
-          <p className="text-gray-400 mb-6">We couldn't find a project with id "{id}".</p>
-          <Link to="/#home" className="text-purple-400 hover:text-purple-300 transition-colors">
+          <p className="text-gray-400 mb-6">
+            We couldn't find a project with id "{id}".
+          </p>
+          <Link
+            to="/#home"
+            className="text-purple-400 hover:text-purple-300 transition-colors"
+          >
             ← Back to Home
           </Link>
         </div>
@@ -21,7 +26,7 @@ export const ProjectDetail = () => {
     );
   }
 
-  const { title, description, demo, notes, tech } = project;
+  const { title, description, reflection, demo, notes, tech } = project;
 
   // Helper to render video either as HTML5 video or embedded iframe (YouTube, etc.)
   const renderVideo = (url) => {
@@ -34,7 +39,8 @@ export const ProjectDetail = () => {
       // Convert typical watch URLs to embed format
       const watchMatch = url.match(/v=([^&]+)/);
       const shortMatch = url.match(/youtu\.be\/([^?]+)/);
-      const videoId = (watchMatch && watchMatch[1]) || (shortMatch && shortMatch[1]);
+      const videoId =
+        (watchMatch && watchMatch[1]) || (shortMatch && shortMatch[1]);
       if (videoId) {
         embedUrl = `https://www.youtube.com/embed/${videoId}`;
       }
@@ -65,13 +71,19 @@ export const ProjectDetail = () => {
 
     // Fallback: simple link if the format isn't recognized
     return (
-      <a href={url} target="_blank" rel="noreferrer" className="text-purple-400 hover:text-purple-300">
+      <a
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        className="text-purple-400 hover:text-purple-300"
+      >
         Open video demo ↗
       </a>
     );
   };
 
-  const cardHover = "hover:-translate-y-1 hover:border-purple-600/30 hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)] transition-all";
+  const cardHover =
+    "hover:-translate-y-1 hover:border-purple-600/30 hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)] transition-all";
 
   // Convert URLs in plain text into clickable links and preserve line breaks
   const linkifyText = (text) => {
@@ -111,7 +123,9 @@ export const ProjectDetail = () => {
 
   return (
     <main className="min-h-screen px-4 py-28 flex justify-center">
-      <div className={`max-w-5xl w-full p-6 md:p-10 rounded-xl border border-white/10 ${cardHover}`}>
+      <div
+        className={`max-w-5xl w-full p-6 md:p-10 rounded-xl border border-white/10 ${cardHover}`}
+      >
         <header className="text-center mb-10">
           <h1 className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
             {title}
@@ -119,7 +133,10 @@ export const ProjectDetail = () => {
           {tech && tech.length > 0 && (
             <div className="flex flex-wrap gap-2 justify-center mt-4">
               {tech.map((t) => (
-                <span key={t} className="bg-purple-600/10 text-purple-400 py-1 px-3 rounded-full text-sm">
+                <span
+                  key={t}
+                  className="bg-purple-600/10 text-purple-400 py-1 px-3 rounded-full text-sm"
+                >
                   {t}
                 </span>
               ))}
@@ -128,14 +145,31 @@ export const ProjectDetail = () => {
         </header>
 
         <div className="grid grid-cols-1 gap-6">
-          <section className={`p-5 rounded-xl border border-white/10 ${cardHover}`}>
-            <h2 className="text-2xl font-semibold mb-3 text-white">Project Description</h2>
+          <section
+            className={`p-5 rounded-xl border border-white/10 ${cardHover}`}
+          >
+            <h2 className="text-2xl font-semibold mb-3 text-white">
+              Project Description
+            </h2>
             <p className="text-gray-300 leading-relaxed">
               {description || "No description provided yet."}
             </p>
           </section>
 
-          <section className={`p-5 rounded-xl border border-white/10 ${cardHover}`}>
+          {reflection && (
+            <section
+              className={`p-5 rounded-xl border border-white/10 ${cardHover}`}
+            >
+              <h2 className="text-2xl font-semibold mb-3 text-white">
+                Reflection
+              </h2>
+              <p className="text-gray-300 leading-relaxed">{reflection}</p>
+            </section>
+          )}
+
+          <section
+            className={`p-5 rounded-xl border border-white/10 ${cardHover}`}
+          >
             <h2 className="text-2xl font-semibold mb-3 text-white">Demo</h2>
             {demo?.images?.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
@@ -153,20 +187,34 @@ export const ProjectDetail = () => {
             {demo?.video ? (
               <div className="mt-2">{renderVideo(demo.video)}</div>
             ) : (
-              <p className="text-gray-400">Add image URLs and a video link to this project's demo to showcase it here.</p>
+              <p className="text-gray-400">
+                Add image URLs and a video link to this project's demo to
+                showcase it here.
+              </p>
             )}
           </section>
 
-          <section className={`p-5 rounded-xl border border-white/10 ${cardHover}`}>
-            <h2 className="text-2xl font-semibold mb-3 text-white">Additional Info</h2>
+          <section
+            className={`p-5 rounded-xl border border-white/10 ${cardHover}`}
+          >
+            <h2 className="text-2xl font-semibold mb-3 text-white">
+              Additional Info
+            </h2>
             <p className="text-gray-300 leading-relaxed">
               {renderNotes(notes)}
             </p>
           </section>
 
           <div className="flex justify-between items-center pt-2">
-            <Link to="/#home" className="text-purple-400 hover:text-purple-300">← Back to Home</Link>
-            <Link to="/#projects" className="text-purple-400 hover:text-purple-300">Back to Projects Grid →</Link>
+            <Link to="/#home" className="text-purple-400 hover:text-purple-300">
+              ← Back to Home
+            </Link>
+            <Link
+              to="/#projects"
+              className="text-purple-400 hover:text-purple-300"
+            >
+              Back to Projects Grid →
+            </Link>
           </div>
         </div>
       </div>
